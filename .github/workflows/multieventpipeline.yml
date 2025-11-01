@@ -1,25 +1,24 @@
 name: "Multi event workflow/pipeline"
 
 on:
-    push:
-        branches:
-            - master
-            - test
+  push:
+    branches:
+      - master
+      - test
+  pull_request:
+    branches:
+      - master
 
-    pull-request:
-            branches:
-                - master
-        
 jobs:
-    push_event_job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Step1 runs when push on M/T branch"
-              run: echo "step1:is triggered ie push"
+  push_event_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Step1 runs when push on master/test branch"
+        run: echo "step1: triggered by push"
 
-    on-pull-request:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Step2 runs when pull on M/T branch"
-              run: echo "Step2 is  ie pull"
+  pr_event_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Step2 runs when PR on master branch"
+        run: echo "step2: triggered by pull request"
 
