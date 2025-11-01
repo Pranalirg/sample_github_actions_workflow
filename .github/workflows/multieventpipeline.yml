@@ -1,0 +1,15 @@
+name: "Multi event workflow/pipeline"
+
+on:
+    push:
+        branches:
+            - master
+            - test
+        
+jobs:
+    Mutlieve_Job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Step1 runs when push on M/T branch"
+              run: echo "step1:running on master/test branch"
+
