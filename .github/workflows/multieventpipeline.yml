@@ -7,8 +7,8 @@ on:
             - test
 
     pull-request:
-        branches:
-            - master
+            branches:
+                - master
         
 jobs:
     push_event_job:
