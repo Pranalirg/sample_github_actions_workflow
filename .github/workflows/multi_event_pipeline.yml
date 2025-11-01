@@ -11,12 +11,14 @@ on:
 
 jobs:
   push_event_job:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: "Step1 runs when push on master/test branch"
         run: echo "st1 triggered by push"
 
   pr_event_job:
+    if: github.event_name == 'pull request'
     runs-on: ubuntu-latest
     steps:
       - name: "Step2 runs when PR on master branch"
