@@ -5,11 +5,21 @@ on:
         branches:
             - master
             - test
+
+    pull-request:
+        branches:
+            - master
         
 jobs:
-    Mutlieve_Job:
+    push_event_job:
         runs-on: ubuntu-latest
         steps:
             - name: "Step1 runs when push on M/T branch"
-              run: echo "step1:running on master/test branch"
+              run: echo "step1:is triggered ie push"
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Step2 runs when pull on M/T branch"
+              run: echo "Step2 is  ie pull"
 
