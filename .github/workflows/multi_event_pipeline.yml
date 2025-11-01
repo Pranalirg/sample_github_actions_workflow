@@ -21,4 +21,3 @@ jobs:
     steps:
       - name: "Step2 runs when PR on master branch"
         run: echo "step2: triggered by pull request"
-
