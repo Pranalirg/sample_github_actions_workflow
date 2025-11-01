@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Step1 runs when push on master/test branch"
-        run: echo "step1: triggered by push"
+        run: echo "st1 triggered by push"
 
   pr_event_job:
     runs-on: ubuntu-latest
     steps:
       - name: "Step2 runs when PR on master branch"
-        run: echo "step2: triggered by pull request"
+        run: echo "st2 triggered by pull request"
